@@ -12,7 +12,7 @@ module.exports = {
         "light-teal": "#2f8d98",
         green: "#b5cd34",
         orange: "#f7941e",
-        "dark-gray": "#414042",
+        "dark-gray": "#2b2b2b",
         "light-gray": "#6d6e71",
         "ada-green": "#6a7f17",
         "ada-orange": "#ac6610",

@@ -22,6 +22,9 @@ ul li::before {
 .bg-ada-orange ul li::before,
 .bg-ada-green ul li::before,
 .bg-dark-grey ul li::before,
+.bg-mel-red ul li::before,
+.bg-mel-rust ul li::before,
+.bg-mel-green ul li::before,
 .bg-mel-blue ul li::before {
   color: #ffffff;
 }
