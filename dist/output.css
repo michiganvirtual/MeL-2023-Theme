@@ -1758,6 +1758,11 @@ video {
   color: rgb(0 110 182 / var(--tw-text-opacity));
 }
 
+.text-mel-red{
+  --tw-text-opacity: 1;
+  color: rgb(143 42 20 / var(--tw-text-opacity));
+}
+
 .text-purple-500{
   --tw-text-opacity: 1;
   color: rgb(168 85 247 / var(--tw-text-opacity));
@@ -1771,6 +1776,16 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-mel-green{
+  --tw-text-opacity: 1;
+  color: rgb(73 100 27 / var(--tw-text-opacity));
+}
+
+.text-mel-rust{
+  --tw-text-opacity: 1;
+  color: rgb(173 77 27 / var(--tw-text-opacity));
 }
 
 .underline{
