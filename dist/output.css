@@ -1717,6 +1717,11 @@ a.bg-white{
   border-color: rgb(47 141 152 / var(--tw-border-opacity));
 }
 
+.border-mel-red{
+  --tw-border-opacity: 1;
+  border-color: rgb(143 42 20 / var(--tw-border-opacity));
+}
+
 .border-orange{
   --tw-border-opacity: 1;
   border-color: rgb(247 148 30 / var(--tw-border-opacity));
@@ -2376,6 +2381,11 @@ a.bg-white{
   .md\:text-7xl{
     font-size: 4.5rem;
     line-height: 1;
+  }
+
+  .md\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 
   .md\:text-xl{
