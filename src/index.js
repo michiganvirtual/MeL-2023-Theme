@@ -59,7 +59,7 @@ $(document).ready(function () {
 
   if ($(".accordion-controls li>a").length) {
     for (var i = 0; i < $(".accordion-controls").length; i++) {
-      $("ul.accordion-controls")[i].setAttribute("role", "menu");
+      //$("ul.accordion-controls")[i].setAttribute("role", "menu");
     }
     for (var i = 0; i < $(".accordion-controls li>a").length; i++) {
       $(".accordion-controls li>a")[i].setAttribute("role", "menuitem");
