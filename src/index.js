@@ -57,12 +57,12 @@ $(document).ready(function () {
     $(this).children(".flip-card-inner").toggleClass("flipped");
   });
 
-  if ($(".accordion-controls li a").length) {
+  if ($(".accordion-controls li>a").length) {
     for (var i = 0; i < $(".accordion-controls").length; i++) {
       $(".accordion-controls")[i].setAttribute("role", "menu");
     }
-    for (var i = 0; i < $(".accordion-controls li a").length; i++) {
-      $(".accordion-controls li a")[i].setAttribute("role", "menuitem");
+    for (var i = 0; i < $(".accordion-controls li>a").length; i++) {
+      $(".accordion-controls li>a")[i].setAttribute("role", "menuitem");
     }
   }
 
