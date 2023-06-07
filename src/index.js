@@ -56,13 +56,15 @@ $(document).ready(function () {
     e.preventDefault();
     $(this).children(".flip-card-inner").toggleClass("flipped");
   });
-
-  if ($(".accordion-controls li>a").length) {
-    for (var i = 0; i < $(".accordion-controls").length; i++) {
-      //$("ul.accordion-controls")[i].setAttribute("role", "menu");
+  console.log($("ul.accordion-controls")[0]);
+  if ($("ul.accordion-controls").length) {
+    for (var i = 0; i < $("ul.accordion-controls").length; i++) {
+      $("ul.accordion-controls")[i].setAttribute("role", "menu");
     }
-    for (var i = 0; i < $(".accordion-controls li>a").length; i++) {
-      $(".accordion-controls li>a")[i].setAttribute("role", "menuitem");
+  }
+  if ($("ul.accordion-controls>li").length) {
+    for (var i = 0; i < $("ul.accordion-controls>li").length; i++) {
+      $("ul.accordion-controls>li")[i].setAttribute("role", "menuitem");
     }
   }
 
@@ -77,7 +79,7 @@ $(document).ready(function () {
 
     var isAriaExp = $control.attr("aria-expanded");
     var newAriaExp = isAriaExp == "false" ? "true" : "false";
-    $control.attr("aria-expanded", newAriaExp);
+    $control.parent().attr("aria-expanded", newAriaExp);
 
     var isAriaHid = $("#" + accordionContent).attr("aria-hidden");
     if (isAriaHid == "true") {
@@ -98,30 +100,28 @@ $(document).ready(function () {
 
   $(".accordion-controls li > a.block").keypress(function (e) {
     e.preventDefault();
-    if (e.which == 13) {
-      var $control = $(this);
-      var accordionContent = $control.attr("aria-controls");
-      checkOthers($control[0]);
+    var $control = $(this);
+    var accordionContent = $control.attr("aria-controls");
+    checkOthers($control[0]);
 
-      var isAriaExp = $control.attr("aria-expanded");
-      var newAriaExp = isAriaExp == "false" ? "true" : "false";
-      $control.attr("aria-expanded", newAriaExp);
+    var isAriaExp = $control.attr("aria-expanded");
+    var newAriaExp = isAriaExp == "false" ? "true" : "false";
+    $control.parent().attr("aria-expanded", newAriaExp);
 
-      var isAriaHid = $("#" + accordionContent).attr("aria-hidden");
-      if (isAriaHid == "true") {
-        $("#" + accordionContent).attr("aria-hidden", "false");
-        //$("#" + accordionContent).toggleClass("max-h-full");
-        $control.find("img.accordion__toggle").toggleClass("rotate-180");
-        $("#" + accordionContent).css(
-          "max-height",
-          $("#" + accordionContent)[0].scrollHeight
-        );
-      } else {
-        $("#" + accordionContent).attr("aria-hidden", "true");
-        // $("#" + accordionContent).toggleClass("max-h-full");
-        $control.find("img.accordion__toggle").toggleClass("rotate-180");
-        $("#" + accordionContent).css("max-height", 0);
-      }
+    var isAriaHid = $("#" + accordionContent).attr("aria-hidden");
+    if (isAriaHid == "true") {
+      $("#" + accordionContent).attr("aria-hidden", "false");
+      //$("#" + accordionContent).toggleClass("max-h-full");
+      $control.find("img.accordion__toggle").toggleClass("rotate-180");
+      $("#" + accordionContent).css(
+        "max-height",
+        $("#" + accordionContent)[0].scrollHeight
+      );
+    } else {
+      $("#" + accordionContent).attr("aria-hidden", "true");
+      //$("#" + accordionContent).toggleClass("max-h-full");
+      $control.find("img.accordion__toggle").toggleClass("rotate-180");
+      $("#" + accordionContent).css("max-height", 0);
     }
   });
 
